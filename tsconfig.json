@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "ESNext",
+    "module": "commonjs",
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "noEmit": false,
+    "jsx": "react",
+    "lib": ["es2015", "es5", "dom", "scripthost", "esnext.asynciterable", "esnext"],
+    "baseUrl": "src",
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "paths": {}
+  },
+  "exclude": ["dist", "docs"],
+  "watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriority"
+  }
+}
