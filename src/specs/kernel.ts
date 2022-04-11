@@ -90,3 +90,18 @@ export interface IKernelExtensionAdvertisment {
 	moduleLocation?: any
 	exportName?: string
 }
+
+export interface IExtension {
+	id: string
+}
+export interface IGUIApplication extends IExtension {
+	matchFile?: (kernel: IKernel, filePath: string) => number
+	renderApplication: (kernel: IKernel, session: ISession) => any
+}
+export interface IIconPack extends IExtension {
+	renderIcon: (kernel: IKernel, props: any) => any
+}
+
+export interface IFileTree extends IExtension {
+	renderTree: (kernel: IKernel, props: any) => any
+}
