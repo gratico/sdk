@@ -87,7 +87,7 @@ export interface IKernelExtensionMeta {
 export interface IKernelExtensionAdvertisment {
 	id: string;
 	meta: IKernelExtensionMeta;
-	capabilities: string[];
+	capability: string;
 	moduleLocation?: any;
 	exportName?: string;
 }
