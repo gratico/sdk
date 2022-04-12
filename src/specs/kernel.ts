@@ -23,7 +23,7 @@ export interface IKernel<T = any> {
 	api: T;
 	extensions: {
 		[capability: string]: {
-			packageName: string;
+			pkgName: string;
 			advt: IKernelExtensionAdvertisment;
 		}[];
 	};
