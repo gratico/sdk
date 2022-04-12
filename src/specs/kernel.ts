@@ -21,7 +21,12 @@ export interface IKernel<T = any> {
 	ipc: BroadcastChannel;
 	pm: PackageManager;
 	api: T;
-	extensions: [];
+	extensions: {
+		[capability: string]: {
+			packageName: string;
+			advt: IKernelExtensionAdvertisment;
+		}[];
+	};
 }
 
 export type NPMHostedIcon = {
