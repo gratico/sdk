@@ -71,6 +71,9 @@ export interface IKernelState {
 	startup: {
 		boot?: true | Error;
 	};
+	workspace: {
+		activeSessionId: string;
+	};
 	sessions: { [id: string]: ISession };
 	nodes: { [id: string]: TreeNode };
 }
