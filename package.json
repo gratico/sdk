@@ -1,6 +1,6 @@
 {
   "name": "@gratico/sdk",
-  "version": "0.8.5",
+  "version": "0.8.7",
   "author": "Abhishiv Saxena<abhishiv@gmail.com>",
   "description": "SDK for grati.co platform",
   "license": "UNLICENSED",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@gratico/fs": "^0.8.3",
-    "@gratico/subway": "^0.8.4",
+    "@gratico/runtime": "^0.8.9",
     "broadcast-channel": "^4.10.0",
     "emittery": "^0.10.1"
   },
