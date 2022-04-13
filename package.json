@@ -1,6 +1,6 @@
 {
   "name": "@gratico/sdk",
-  "version": "0.8.16",
+  "version": "0.8.17",
   "author": "Abhishiv Saxena<abhishiv@gmail.com>",
   "description": "SDK for grati.co platform",
   "license": "UNLICENSED",
@@ -39,10 +39,12 @@
     "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
     "@gratico/docs-site": "^0.1.2",
+    "@types/react": "^17.0.44",
     "docco": "^0.9.1",
     "docco-next": "^0.9.3",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
+    "react": "^17.0.2",
     "typedoc": "^0.19.2",
     "typescript": "^4.1.2"
   }

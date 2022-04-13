@@ -2,6 +2,7 @@ import { IFileSystem } from "@gratico/fs";
 import { BroadcastChannel } from "broadcast-channel";
 import { IProject, IUser } from "./business";
 import { PackageManager } from "@gratico/runtime";
+import React from "react";
 export interface LocalParams {
 	file: string;
 	path: string;
@@ -112,9 +113,17 @@ export interface IGUIApplication extends IExtension {
 	matchFile?: (kernel: IKernel, filePath: string) => number;
 	renderApplication: (kernel: IKernel, session: ISession) => any;
 }
+
+export type IconPlaceholderRenderer = () => React.ReactNode;
+export interface IconRendererProps {
+	icon: Icon;
+	size: number;
+	placeholder?: IconPlaceholderRenderer;
+}
+
 export interface IIconPack extends IExtension {
 	stylesheets: string[];
-	renderIcon: (kernel: IKernel, props: any) => any;
+	renderIcon: (props: IconRendererProps) => any;
 }
 
 export interface IFileTree extends IExtension {

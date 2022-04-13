@@ -4,7 +4,7 @@ export async function resolveModule(
 	pkgName: string,
 	advt: IKernelExtensionAdvertisment
 ) {
-	const mod = await kernel.pm.getModule("pkgName");
+	const mod = await kernel.pm.getModule(pkgName);
 	return mod[advt.exportName || "__default"];
 }
 export async function getExtension(kernel: IKernel, capability: string) {
