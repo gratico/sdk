@@ -48,17 +48,33 @@ export type FileNameDependentIcon = {
 };
 export type Icon = NPMHostedIcon | RawIcon | FileNameDependentIcon;
 
-export interface TreeNode {
+export type DBRecord<T = any> = {
 	id: string;
+	rev: string;
 	parentId: string;
 	score: string;
 	type: string;
 	label: string;
+	applicationId?: string;
 	icon?: Icon;
 	expandable?: boolean;
-	meta?: Record<string, any>;
-	state: Record<string, any>;
-}
+	payload: T;
+};
+
+export type TreeNode<T = any> =
+	| {
+			type: "db";
+			id: string;
+			parentId: string;
+			score: string;
+			rev: string;
+			attrs: DBRecord<T>;
+			meta?: Record<string, any>;
+			state: Record<string, any>;
+	  }
+	| { type: "file"; id: string; state: Record<string, any> }
+	| { type: "dir"; id: string; state: Record<string, any> }
+	| { type: "root"; id: string; label: string };
 
 export interface RootChildrenFetcher {
 	type: string;
