@@ -34,14 +34,18 @@ export type NPMHostedIcon = {
 	packageName: string;
 	packageVersion?: string;
 	path: string;
-	iconType: "svg";
+	iconType?: "svg";
 };
 export type RawIcon = {
 	type: "raw";
 	content: string;
 	iconType: "svg" | "png";
 };
-export type Icon = NPMHostedIcon | RawIcon;
+export type FileNameDependentIcon = {
+	type: "file";
+	path: string;
+};
+export type Icon = NPMHostedIcon | RawIcon | FileNameDependentIcon;
 
 export interface TreeNode {
 	id: string;
