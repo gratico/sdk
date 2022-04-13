@@ -109,6 +109,7 @@ export interface IGUIApplication extends IExtension {
 	renderApplication: (kernel: IKernel, session: ISession) => any;
 }
 export interface IIconPack extends IExtension {
+	stylesheets: string[];
 	renderIcon: (kernel: IKernel, props: any) => any;
 }
 
