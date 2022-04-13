@@ -11,4 +11,5 @@
 //     import {IKernel} from "@gratico/sdk"
 //
 
-export * from './specs'
+export * from "./specs";
+export * from "./helpers";
