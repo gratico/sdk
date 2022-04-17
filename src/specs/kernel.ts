@@ -52,12 +52,12 @@ export type DBRecord<T = any> = {
 	id: string;
 	rev: string;
 	parentId: string;
+	ancestorIds: string[];
 	score: string;
 	type: string;
-	label: string;
+	name: string;
 	applicationId?: string;
 	icon?: Icon;
-	expandable?: boolean;
 	payload: T;
 };
 
@@ -68,13 +68,29 @@ export type TreeNode<T = any> =
 			parentId: string;
 			score: string;
 			rev: string;
+			name: string;
 			attrs: DBRecord<T>;
-			meta?: Record<string, any>;
+			expandable?: boolean;
 			state: Record<string, any>;
 	  }
-	| { type: "file"; id: string; state: Record<string, any> }
-	| { type: "dir"; id: string; state: Record<string, any> }
-	| { type: "root"; id: string; label: string };
+	| {
+			type: "file";
+			id: string;
+			parentId: string;
+			score: string;
+			name: string;
+			expandable?: boolean;
+			state: Record<string, any>;
+	  }
+	| {
+			type: "dir";
+			id: string;
+			parentId: string;
+			name: string;
+			score: string;
+			state: Record<string, any>;
+	  }
+	| { type: "root"; id: string; name: string; state: Record<string, any> };
 
 export interface RootChildrenFetcher {
 	type: string;
@@ -144,4 +160,10 @@ export interface IIconPack extends IExtension {
 
 export interface IFileTree extends IExtension {
 	renderTree: (kernel: IKernel, props: any) => any;
+}
+
+export interface IVCSProvider extends IExtension {
+	attributes: Record<string, any>;
+	clone: () => void;
+	writeFile: () => void;
 }
