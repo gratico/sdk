@@ -61,47 +61,57 @@ export type DBRecord<T = any> = {
 	payload: T;
 };
 
+export type DBNode<T = any> = {
+	type: "db";
+	id: string;
+	parentId: string;
+	score: string;
+	rev: string;
+	name: string;
+	attrs: DBRecord<T>;
+	expandable?: boolean;
+	state: Record<string, any>;
+};
+export type FileNode<T = any> = {
+	type: "file";
+	id: string;
+	parentId: string;
+	score: string;
+	name: string;
+	expandable?: boolean;
+	attrs: DBRecord<T>;
+	state: Record<string, any>;
+};
+export type DirNode<T = any> = {
+	type: "dir";
+	id: string;
+	parentId: string;
+	name: string;
+	score: string;
+	attrs: DBRecord<T>;
+	state: Record<string, any>;
+};
+export type SubmoduleNode<T = any> = {
+	type: "submodule";
+	id: string;
+	parentId: string;
+	name: string;
+	score: string;
+	attrs: DBRecord<T>;
+	state: Record<string, any>;
+};
+export type RootNode = {
+	type: "root";
+	id: string;
+	name: string;
+	state: Record<string, any>;
+};
 export type TreeNode<T = any> =
-	| {
-			type: "db";
-			id: string;
-			parentId: string;
-			score: string;
-			rev: string;
-			name: string;
-			attrs: DBRecord<T>;
-			expandable?: boolean;
-			state: Record<string, any>;
-	  }
-	| {
-			type: "file";
-			id: string;
-			parentId: string;
-			score: string;
-			name: string;
-			expandable?: boolean;
-			attrs: DBRecord<T>;
-			state: Record<string, any>;
-	  }
-	| {
-			type: "dir";
-			id: string;
-			parentId: string;
-			name: string;
-			score: string;
-			attrs: DBRecord<T>;
-			state: Record<string, any>;
-	  }
-	| {
-			type: "submodule";
-			id: string;
-			parentId: string;
-			name: string;
-			score: string;
-			attrs: DBRecord<T>;
-			state: Record<string, any>;
-	  }
-	| { type: "root"; id: string; name: string; state: Record<string, any> };
+	| DBNode<T>
+	| FileNode<T>
+	| DirNode<T>
+	| SubmoduleNode<T>
+	| RootNode;
 
 export interface RootChildrenFetcher {
 	type: string;
