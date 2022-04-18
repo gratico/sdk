@@ -80,6 +80,7 @@ export type TreeNode<T = any> =
 			score: string;
 			name: string;
 			expandable?: boolean;
+			attrs: DBRecord<T>;
 			state: Record<string, any>;
 	  }
 	| {
@@ -88,6 +89,16 @@ export type TreeNode<T = any> =
 			parentId: string;
 			name: string;
 			score: string;
+			attrs: DBRecord<T>;
+			state: Record<string, any>;
+	  }
+	| {
+			type: "submodule";
+			id: string;
+			parentId: string;
+			name: string;
+			score: string;
+			attrs: DBRecord<T>;
 			state: Record<string, any>;
 	  }
 	| { type: "root"; id: string; name: string; state: Record<string, any> };
