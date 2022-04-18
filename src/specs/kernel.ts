@@ -134,7 +134,12 @@ export interface IKernelState {
 		[key: string]: any;
 	};
 	sessions: { [id: string]: ISession };
+	sessionData: { [id: string]: ISessionData };
 	nodes: { [id: string]: TreeNode };
+}
+
+export interface ISessionData {
+	[key: string]: any;
 }
 
 export interface IApplication {
