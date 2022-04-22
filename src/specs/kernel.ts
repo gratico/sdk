@@ -121,7 +121,8 @@ export interface RootChildrenFetcher {
 export interface ISession {
 	id: string;
 	applicationId: string;
-	treeNodeId: string;
+	node: TreeNode;
+	ancestors: TreeNode[];
 	state: Record<string, any>;
 }
 
