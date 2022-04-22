@@ -72,11 +72,8 @@ export interface RootChildrenFetcher {
 }
 
 export interface ISession {
-	id: string;
-	applicationId: string;
-	node: TreeNode;
-	ancestors: TreeNode[];
-	state: Record<string, any>;
+	node: DBRecord;
+	ancestors: DBRecord[];
 }
 
 export interface IKernelState {
