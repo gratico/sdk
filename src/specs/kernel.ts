@@ -53,19 +53,16 @@ export type TreeNodeType = "root" | "dir" | "file" | "submodule";
 export type DBRecord<T = any> = {
 	id: string;
 	rev: string;
-	parentId: string;
-	ancestorIds: string[];
 	type: TreeNodeType;
 	name: string;
+	parentId?: string;
+	ancestorIds: string[];
 	score?: string;
 	applicationId?: string;
 	icon?: Icon;
 };
 
 export type TreeNode<T = any> = {
-	type: "root";
-	id: string;
-	name: string;
 	attrs: DBRecord<T>;
 	state: Record<string, any>;
 };
