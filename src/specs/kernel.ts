@@ -50,7 +50,7 @@ export type Icon = NPMHostedIcon | RawIcon | FileNameDependentIcon;
 
 export type TreeNodeType = "root" | "dir" | "file" | "submodule";
 
-export type DBRecord<T = any> = {
+export type DocListing<T = any> = {
 	id: string;
 	rev: string;
 	type: TreeNodeType;
@@ -61,9 +61,21 @@ export type DBRecord<T = any> = {
 	applicationId?: string;
 	icon?: Icon;
 };
+export type Doc<T = any> = {
+	id: string;
+	rev: string;
+	type: TreeNodeType;
+	name: string;
+	parentId?: string;
+	ancestorIds: string[];
+	score?: string;
+	applicationId?: string;
+	icon?: Icon;
+	payload: T;
+};
 
 export type TreeNode<T = any> = {
-	attrs: DBRecord<T>;
+	attrs: DocListing<T>;
 	state: Record<string, any>;
 };
 export interface RootChildrenFetcher {
@@ -72,8 +84,8 @@ export interface RootChildrenFetcher {
 }
 
 export interface ISession {
-	node: DBRecord;
-	ancestors: DBRecord[];
+	node: DocListing;
+	ancestors: DocListing[];
 }
 
 export interface IKernelState {
