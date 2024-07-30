@@ -4,20 +4,13 @@
 @gratico/sdk
 =====
 
-SDK.
+SDK for grati.co platform
 
 Install and use
 ---------------
 
 To use run `npm install -g @gratico/sdk`
 
-    import {} from "@gratico/sdk"
-
-
-
-```
-export * from "./extensions";
-
-```
+    import {IKernel} from "@gratico/sdk"
 
 
