@@ -1,9 +1,6 @@
 
 # @gratico/sdk
 
-@gratico/sdk
-=====
-
 SDK for grati.co platform
 
 Install and use
