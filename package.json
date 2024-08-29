@@ -1,6 +1,6 @@
 {
   "name": "@gratico/sdk",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "author": "Abhishiv Saxena<abhishiv@gmail.com>",
   "license": "MIT",
   "type": "module",
@@ -29,12 +29,12 @@
       "import": "./src/index.ts"
     }
   },
-  "peerDependencies": {
-    "alfama": "*"
+  "optionalDependencies": {
+    "alfama": "*",
+    "@types/json-schema": "*"
   },
   "dependencies": {
-    "emittery": "^1.0.3",
-    "@types/json-schema": "*"
+    "emittery": "^1.0.3"
   },
   "devDependencies": {
     "esbuild": "^0.21.5",
