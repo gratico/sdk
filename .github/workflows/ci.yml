@@ -27,6 +27,7 @@ jobs:
 
       - id: Publish
         uses: JS-DevTools/npm-publish@v1
+        if: github.ref == 'refs/heads/master'
         with:
           registry: "https://registry.npmjs.org/"
           token: ${{ secrets.NPM_TOKEN }}
