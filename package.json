@@ -16,11 +16,6 @@
   "files": [
     "./dist"
   ],
-  "devDependencies": {
-    "esbuild": "^0.21.5",
-    "typescript": "^5.2.2",
-    "vitest": "^2.0.5"
-  },
   "scripts": {
     "build": "make build",
     "test": "npx vitest --run --passWithNoTests",
@@ -40,5 +35,10 @@
   "dependencies": {
     "emittery": "^1.0.3",
     "@types/json-schema": "*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5",
+    "typescript": "^5.2.2",
+    "vitest": "^2.0.5"
   }
 }
