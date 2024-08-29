@@ -1,5 +1,4 @@
 import * as esbuild from "esbuild";
-import { sassPlugin, postcssModules } from "esbuild-sass-plugin";
 
 (async () => {
   await esbuild.build({
