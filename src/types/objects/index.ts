@@ -1,10 +1,5 @@
 import { ObjPathProxy, StoreCursor } from "alfama";
 
-import { IBus } from "../bus";
-import { IFs, IRuntime } from "../runtime";
-
-import { Awareness } from "y-protocols/awareness";
-
 export enum MessageType {
   QUERY_STATE,
   APPLY_UPDATE,
@@ -21,7 +16,7 @@ export type IRealtimeMessage<T = any> = {
   createdAt: number;
 };
 
-export interface IRealtimeProvider<Doc = any, Message = any> {
+export interface IRealtimeProvider<Doc = any, Message = any, Awareness = any> {
   id: string;
   docId: string;
   type: string;
@@ -156,7 +151,7 @@ export type IRepoRef = {
   value: string;
 };
 
-export interface ICheckout {
+export interface ICheckout<IFs = any> {
   id: string;
   fs: IFs;
   ref: IRepoRef;

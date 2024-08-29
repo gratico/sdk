@@ -1,4 +1,4 @@
-export type { IFs } from "@gratico/fs";
+export type IFs = any;
 
 export interface ImportShim {
   addImportMap: Function;

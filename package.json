@@ -39,8 +39,6 @@
   },
   "dependencies": {
     "emittery": "^1.0.3",
-    "json-schema": "*",
-    "@gratico/fs": "*",
-    "y-protocols": "^1.0.6"
+    "@types/json-schema": "*"
   }
 }
