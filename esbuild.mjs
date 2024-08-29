@@ -11,13 +11,6 @@ import { sassPlugin, postcssModules } from "esbuild-sass-plugin";
     format: "esm",
     sourcemap: false,
     minify: true,
-    plugins: [
-      sassPlugin({
-        type: "style",
-        transform: postcssModules({
-          // ...put here the options for postcss-modules: https://github.com/madyankin/postcss-modules
-        }),
-      }),
-    ],
+    plugins: [],
   });
 })();
